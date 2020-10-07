@@ -19,3 +19,8 @@
         permanent: true
         state: enabled
         immediate: yes
+        
+    - name: copy the content
+      copy:
+        content: "hi there welcome to webpage"
+        dest: /var/www/html/index.html
