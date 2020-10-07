@@ -1,0 +1,10 @@
+name: my first play                        
+  hosts: all                                 
+  become: yes                                
+  remote_user: root                          
+  tasks:                                     
+    - name:                                  
+      debug:                                 
+        msg: "hi there this is my first play"
+        
+~                                             
