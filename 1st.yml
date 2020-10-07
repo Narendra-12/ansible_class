@@ -1,4 +1,4 @@
-name: my first play                        
+- name: my first play                        
   hosts: all                                 
   become: yes                                
   remote_user: root                          
