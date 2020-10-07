@@ -1,0 +1,15 @@
+- name: play for web server configuration
+  hosts: all
+  become: yes
+  tasks:
+    - name: installation
+      yum:
+        name: httpd
+        state: latest
+
+    - name: start the service
+      service:
+        name: httpd
+        state: started
+        enabled: true
+
