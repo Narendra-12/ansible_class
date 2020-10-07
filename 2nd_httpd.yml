@@ -13,3 +13,9 @@
         state: started
         enabled: true
 
+    - name: firewall allow httpd
+      firewalld:
+        service: http
+        permanent: true
+        state: enabled
+        immediate: yes
