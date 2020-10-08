@@ -1,0 +1,11 @@
+---
+- name: play removed
+  hosts: all
+  tasks:
+    - name: Install the firewall
+      yum:
+        name: 
+          - httpd
+          - firewalld
+        state: removed
+~                             
