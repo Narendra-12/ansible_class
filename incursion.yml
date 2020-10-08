@@ -1,6 +1,6 @@
 ---
 - name: play 1
-  hosts: webserver
+  hosts: all
   vars:
     rule: http
   tasks:
