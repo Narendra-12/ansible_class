@@ -1,0 +1,12 @@
+- name: play 1 
+  hosts: all
+  vars:
+    user: vishal
+  tasks:
+    - name: print the value 
+      debug:
+        msg: hi there this is {{ user }}
+
+    - name: print the value 
+      debug:
+        msg: "{{ user }}"

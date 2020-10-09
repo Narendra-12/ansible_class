@@ -1,0 +1,7 @@
+- name: play 3 
+  hosts: all 
+  gather_facts: yes
+  tasks:
+    - name: print facts
+      debug:
+        msg: "{{ansible_hostname}}"

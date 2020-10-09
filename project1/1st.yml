@@ -1,0 +1,12 @@
+- name: my first play                        
+  hosts: all                          
+  become: yes                                
+  remote_user: root                          
+  tasks:                                     
+    - name: task1                                
+      debug:                                 
+        msg: "hi there this is my first play"
+    
+    - name: task2
+      debug:
+        msg: "this is second task in execution"

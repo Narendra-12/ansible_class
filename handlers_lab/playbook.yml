@@ -1,0 +1,15 @@
+- name: play7
+  hosts: all 
+  become: yes
+  tasks:
+    - name: copy
+      copy:
+        src:  /home/stagiaire/vs.txt
+        dest: /var/tmp/
+      notify:
+        - do_this
+
+  handlers:
+    - name: do_this
+      debug:
+        msg: "handler executed"

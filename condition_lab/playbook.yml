@@ -1,0 +1,10 @@
+- name: play 5 
+  hosts: all
+  tasks:
+    - name: print this
+      debug:
+        msg: checking the when condition
+#     when: var1 is defined/not defined  #checking whether the variable is present of not
+#     when: var1  ==/!= "user" 
+      when: var1 is defined and var1 == "user1"
+ 

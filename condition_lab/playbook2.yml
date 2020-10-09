@@ -1,0 +1,8 @@
+- name: play 5 
+  hosts: all
+  gather_facts: yes
+  tasks:
+    - name: print this
+      debug:
+        msg: checking the when condition
+      when: ansible_hostname != "slave1" 

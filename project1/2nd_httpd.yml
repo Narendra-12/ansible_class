@@ -1,0 +1,26 @@
+- name: play for web server configuration
+  hosts: all
+  become: yes
+  tasks:
+    - name: installation
+      yum:
+        name: httpd
+        state: latest
+    
+    - name: start the service
+      service:
+        name: httpd
+        state: started
+        enabled: true
+
+    - name: firewall allow httpd
+      firewalld:
+        service: http
+        permanent: true
+        state: enabled
+        immediate: yes
+
+    - name: copy the content
+      copy:
+        content: "hi there welcome to webpage form testing"
+        dest: /var/www/html/index.html

@@ -1,0 +1,8 @@
+- name: play 5 
+  hosts: all
+  tasks:
+    - name: print this
+      debug:
+        msg: checking the when condition
+#     when: inventory_hostname != "192.168.56.101" 
+      when: inventory_hostname in groups["testserver"] 

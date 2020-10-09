@@ -1,0 +1,20 @@
+---
+- name: task1 to install the software 
+  yum:
+    name: httpd
+    state: latest
+  notify:
+    - hand1
+
+- name: firewall allow httpd
+  firewalld:
+    service: http
+    permanent: true
+    state: enabled
+    immediate: yes
+
+- name: copy the file
+  copy:
+    src: index.html
+    dest: /var/www/html/index.html
+

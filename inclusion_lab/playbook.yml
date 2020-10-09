@@ -1,0 +1,10 @@
+- name: play 4
+  hosts: all
+  tasks:
+
+    - name: calling vars 
+      include_vars: vars/var.yml
+    
+    - name: calling tasks
+      include: tasks/task1.yml
+

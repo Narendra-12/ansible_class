@@ -1,0 +1,17 @@
+- name: when final condition
+  hosts: all 
+  ignore_errors: yes
+  become: yes
+  tasks:
+    - name: install the software 
+      yum:
+        name: httpsasdd
+        state: present
+      register: result
+      
+    - name: start the service
+      service:
+        name: httpd
+        state: started
+      when: result.rc == 0
+

@@ -1,0 +1,19 @@
+- name: play 8
+  hosts: all 
+  become: yes
+  tasks:
+    - block:
+        - name: install pkg 
+          yum:
+            name: httpdsada
+            state: present
+      
+      rescue:
+        - name: new
+          debug:
+            msg: the task has failed 
+
+      always:
+        - name: print
+          debug:
+            msg: fail job

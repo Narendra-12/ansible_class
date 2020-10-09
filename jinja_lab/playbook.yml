@@ -1,0 +1,9 @@
+- name: copy 
+  hosts: all 
+  become: yes
+  gather_facts: yes
+  tasks:
+    - name: copy a file
+      template:
+        src: /tmp/a.txt
+        dest: /tmp/c.txt

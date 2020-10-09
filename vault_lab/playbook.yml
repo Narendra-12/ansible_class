@@ -1,0 +1,10 @@
+- name: using vault to the playbook
+  hosts: all 
+  become: yes 
+  vars_files:
+    - sec.yml
+    - sec1.yml
+  tasks:
+    - name: task1
+      debug:
+        msg: this is {{password}} for {{user}}

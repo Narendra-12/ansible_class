@@ -1,0 +1,14 @@
+- name: play 2 
+  hosts: all
+  become: yes
+  tasks:
+    - name: install httpd 
+      yum: 
+        name: httpd
+        state: removed
+      register: install_result
+
+    - name: print the output 
+      debug:
+        var: install_result.changed
+

@@ -1,0 +1,17 @@
+- name: checking parallel
+  hosts: all
+  serial: 1 
+  tasks:
+    - name: copy file
+      copy:
+        content: "hi there"
+        dest: /tmp/newfile12.txt
+
+
+    - name: print that
+      debug:
+        msg: new data copied
+
+    - name: print this 
+      debug:
+        msg: hello

@@ -1,0 +1,13 @@
+- name: using loop 
+  hosts: all 
+  become: yes
+  tasks:
+    - name: install the pkgs
+      yum:
+        name: "{{item}}"
+        state: absent
+      loop:
+        - httpd
+        - vsftpd
+        - mysql
+
