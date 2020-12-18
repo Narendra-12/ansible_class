@@ -1,0 +1,8 @@
+- name: ping
+  hosts: all
+  tasks: 
+    - ping:
+      register: a
+         
+    - debug:
+        var: a
